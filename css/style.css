@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root{
+    --cor1: #8857F2;
+    --cor2: #6B71F2;
+    --cor3: #D7F205;
+    --cor4: #F2CB05;
+    --cor5: #F28705;
+}
+
+
+h1{
+    font-family: 'Righteous', cursive;
+}
+
+h2, h3, h4{
+    font-family: 'Kanit', sans-serif;
+}
+
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
