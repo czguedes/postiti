@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    
 }
 
 :root{
@@ -13,3 +16,75 @@
     --cor5: #F28705;
 }
 
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(../imagens/pexels-gradienta-7134986.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+main img{
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-box{
+    position: relative;
+    height: 500px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8857F2;
+}
+
+h2{
+    font-size: 2em;
+    text-align: center;
+    margin: 10px 0;
+}
+
+p{
+    font-size: 1em;
+    text-align: center;
+    margin: 10px 0;
+    background-color: #6B71F2;
+}
+
+a{
+    text-decoration: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+.login-input input{
+    margin: 10px 0;
+    padding: 0 13px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #F28705;
+}
+
+
+.login-input label{
+    background-color: #F28705;
+    color: white;
+    padding: 0 10px;
+    float: right;
+}
+
+.login-box button{
+    margin: 10px 0;
+    border: none;
+    padding: 0 100px;
+}
+
+.login-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

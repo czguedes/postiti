@@ -4,17 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Postiti - Cadastro</title>
+    <title>Postiti - Login</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap');
-      </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    
+    <main>
+        <div class="login-box">
+            <div class="login-form">
+                <form>
+                    <h2>Login</h2>
+                    <p>Sistema de Anotações</p>
+                    <div class="login-input">
+                        <input type="email" name="emailUsuario" id="emailUsuario" required placeholder="email@email.com">
+                        <label for="emailUsuario"><span class="material-symbols-outlined">
+                            mail
+                            </span></label>
+                    </div>
+                    <div class="login-input">
+                        <input type="password" name="senhaUsuario" id="senhaUsuario" required placeholder="********">
+                        <label for="senhaUsuario"><span class="material-symbols-outlined">
+                            vpn_key
+                            </span></label>
+                    </div>
+                    <button type="submit">Entrar</button>
+                    <p><a href="cadastro.html">Registrar-se</a></p>
+                </form>
+            </div>
+        </div>
+        <div class="login-box">
+            <img src="imagens/pexels-leeloo-thefirst-5408810.jpg" alt="">
+        </div>
+    </main>
+
     <script src="js/index.js"></script>
 </body>
 </html>
