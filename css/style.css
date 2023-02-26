@@ -9,11 +9,16 @@
 }
 
 :root{
-    --cor1: #8857F2;
-    --cor2: #6B71F2;
-    --cor3: #D7F205;
-    --cor4: #F2CB05;
-    --cor5: #F28705;
+    --cor1: #FF9EA0;
+    --cor2: #FE6E72;
+    --cor3: #FE474C;
+    --cor4: #FE2127;
+    --cor5: #FD0006;
+    --cor6: #3BD4CE;
+    --cor7: #94EFEB;
+    --cor8: #61E1DC;
+    --cor9: #1AC5BE;
+    --cor10: #00B1AA;
 }
 
 main{
@@ -22,9 +27,9 @@ main{
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    background-image: url(../imagens/pexels-gradienta-7134986.jpg);
+    background-color: var(--cor1);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100%;    
 }
 
 main img{
@@ -39,7 +44,8 @@ main img{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #8857F2;
+    background-color: whitesmoke;
+    box-shadow: 5px 5px 5px var(--cor4);
 }
 
 h2{
@@ -48,43 +54,56 @@ h2{
     margin: 10px 0;
 }
 
-p{
+p {
     font-size: 1em;
     text-align: center;
     margin: 10px 0;
-    background-color: #6B71F2;
+    padding: 5px;
+    background-color: var(--cor3);
+    color: white;
 }
 
-a{
+.login-box a{
     text-decoration: inherit;
     font-size: inherit;
     color: inherit;
 }
 
 .login-input input{
-    margin: 10px 0;
-    padding: 0 13px;
+    margin: 10px 0;    
     border: none;
     background-color: transparent;
-    border-bottom: 2px solid #F28705;
+    border-bottom: 2px solid var(--cor3);
+    
 }
 
+#emailUsuario, #senhaUsuario{
+    width: 250px;
+}
 
 .login-input label{
-    background-color: #F28705;
-    color: white;
-    padding: 0 10px;
-    float: right;
+    color: var(--cor5);
+    padding: 5px 0;
+    font-weight: bold;
 }
 
 .login-box button{
     margin: 10px 0;
     border: none;
-    padding: 0 100px;
+    padding: 5px;
+    background-color: var(--cor9);
+    color: white;
+    width: 250px;
+    text-align: center;
+    font-size: 1em;
 }
 
 .login-box img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.login-form{
+    width: 250px;
 }
