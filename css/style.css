@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
+/* =--------= CONFIGURAÇÕES GLOBAIS =--------= */
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Space Grotesk', sans-serif;
-    
+    font-family: 'Space Grotesk', sans-serif;    
 }
 
 :root{
@@ -19,9 +20,22 @@
     --cor8: #61E1DC;
     --cor9: #1AC5BE;
     --cor10: #00B1AA;
+    --cor11: #BEF845;
+    --cor12: #DDFC9C;
+    --cor13: #CCFA6C;
+    --cor14: #B1F520;
+    --cor15: #A4F200;
 }
 
-main{
+h2{
+    font-size: 2em;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* =--------= PÁGINAS DE LOGIN E CADASTRO =--------= */
+
+#pagina-login{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,9 +46,15 @@ main{
     background-size: 100%;    
 }
 
-main img{
-    width: 100vw;
-    height: 100vh;
+#pagina-cadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--cor12);
+    background-repeat: no-repeat;
+    background-size: 100%;    
 }
 
 .login-box{
@@ -48,13 +68,18 @@ main img{
     box-shadow: 5px 5px 5px var(--cor4);
 }
 
-h2{
-    font-size: 2em;
-    text-align: center;
-    margin: 10px 0;
+.cadastro-box{
+    position: relative;
+    height: 500px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    box-shadow: 5px 5px 5px var(--cor15);
 }
 
-p {
+#pagina-login p {
     font-size: 1em;
     text-align: center;
     margin: 10px 0;
@@ -69,20 +94,36 @@ p {
     color: inherit;
 }
 
+.cadastro-box a{
+    text-decoration: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
 .login-input input{
     margin: 10px 0;    
     border: none;
     background-color: transparent;
     border-bottom: 2px solid var(--cor3);
-    
+    width: 250px;    
 }
 
-#emailUsuario, #senhaUsuario{
-    width: 250px;
+.cadastro-input input{
+    margin: 10px 0;    
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid var(--cor10);
+    width: 250px;    
 }
 
 .login-input label{
     color: var(--cor5);
+    padding: 5px 0;
+    font-weight: bold;
+}
+
+.cadastro-input label{
+    color: var(--cor10);
     padding: 5px 0;
     font-weight: bold;
 }
@@ -98,12 +139,26 @@ p {
     font-size: 1em;
 }
 
-.login-box img{
+.cadastro-box button{
+    margin: 10px 0;
+    border: none;
+    padding: 5px;
+    background-color: var(--cor10);
+    color: white;
+    width: 250px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.login-box img, .cadastro-box img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.login-form{
+.login-form, .cadastro-form{
     width: 250px;
 }
+
+
+/* =--------= PÁGINA DE RECADOS =--------= */
