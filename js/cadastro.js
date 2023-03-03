@@ -1,9 +1,10 @@
 const usuarios = JSON.parse(localStorage.getItem('usuariosCadastrados') ?? '[]')
 
-const capturaForm = document.getElementById('cadastroUsuario')
 
 function cadastroUsuario(event) {
     event.preventDefault()
+    
+    const capturaForm = document.getElementById('cadastroUsuario')
     
     if(capturaForm.senhaUsuario.value !== capturaForm.senhaRepeat.value){
         alert('As senhas não são idênticas!')
