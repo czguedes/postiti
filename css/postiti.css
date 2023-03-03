@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* =--------= CONFIGURAÇÕES GLOBAIS =--------= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;    
+}
+
+:root{
+    --cor1: #FF9EA0;
+    --cor2: #FE6E72;
+    --cor3: #FE474C;
+    --cor4: #FE2127;
+    --cor5: #FD0006;
+    --cor6: #3BD4CE;
+    --cor7: #94EFEB;
+    --cor8: #61E1DC;
+    --cor9: #1AC5BE;
+    --cor10: #00B1AA;
+    --cor11: #BEF845;
+    --cor12: #DDFC9C;
+    --cor13: #CCFA6C;
+    --cor14: #B1F520;
+    --cor15: #A4F200;
+}
+
+.body-container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* =--------= HEADER =--------= */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00B1AA;
+    height: 7vh;
+    width: 100vw;
+}
+
+.header button{
+    position: absolute;
+    right: 0;
+    height: inherit;
+    width: 20vw;
+}
+
+/* =--------= MAIN =--------= */
+
+.main{
+    display: flex;
+    background-color: #A4F200;
+    height: 90vh;
+}
+
+#recados{
+    background-color: blueviolet;
+    width: 80vw;
+    height: 100%;
+    
+}
+
+#addRecado{
+    background-color: antiquewhite;
+    width: 20vw;
+    height: 100%;
+}
+
+/* =--------= FOOTER =--------= */
+
+.footer{
+    display: flex;
+    background-color: #FD0006;
+    height: 3vh;
+}

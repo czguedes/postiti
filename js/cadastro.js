@@ -1,8 +1,32 @@
-function acessoUsuario(event) {
+const usuarios = JSON.parse(localStorage.getItem('usuariosCadastrados') ?? '[]')
+
+const capturaForm = document.getElementById('cadastroUsuario')
+
+function cadastroUsuario(event) {
     event.preventDefault()
-
-    const formAcesso = document.getElementById('cadastroUsuario')
     
-    formAcesso.addEventListener('submit', window.location.href = 'postiti.html')
+    if(capturaForm.senhaUsuario.value !== capturaForm.senhaRepeat.value){
+        alert('As senhas não são idênticas!')
+        return
+    }
 
+    const emailExiste = usuarios.some((usuario) => usuario.emailUsuario === capturaForm.emailUsuario.value)
+
+    if(emailExiste) {
+        alert('Esse email já foi cadastrado!')
+        return
+    }
+    
+    const cadastroUsuario = {
+        emailUsuario: capturaForm.emailUsuario.value,
+        senhaUsuario: capturaForm.senhaUsuario.value
+    }
+
+    usuarios.push(cadastroUsuario)
+    
+    localStorage.setItem('usuariosCadastrados', JSON.stringify(usuarios))
+
+    alert('Usuário cadastrado com sucesso!')
+    
+    location.href = './index.html'
 }
