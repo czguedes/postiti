@@ -17,8 +17,50 @@
         </header>
         <main>
             <div class="main">
-                <div id="recados"></div>
-                <div id="addRecado"></div>
+                <div id="addRecado">
+                    <div class="div-cabecalho">
+                        <h3>Olá Fulano!</h3>
+                    </div>
+                    <div class="div-form">
+                        <form id="addPostiti" action="">
+                            <div>
+                                <label for="tituloRecado">Descrição: </label><br>                        
+                                <input type="text" name="tituloRecado" id="tituloRecado">
+                            </div>                        
+                            
+                            <div>
+                                <label for="novoRecado">Escreva seu recado: </label>
+                                <textarea name="novoRecado" id="novoRecado" cols="30" rows="10"></textarea>
+                            </div>
+                            
+                            <button type="submit">+</button>
+                        </form>
+                    </div>                    
+                </div>
+                
+                <div id="recados">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>iD</td>
+                                <td>Descrição</td>
+                                <td>Recado</td>
+                                <td>Ações</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01</td>
+                                <td>Saudação</td>
+                                <td>olá mundo!</td>
+                                <td>
+                                    <button>Editar</button>
+                                    <button>Excluir</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </main>
         <footer>
