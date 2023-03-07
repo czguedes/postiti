@@ -19,8 +19,10 @@ function cadastroUsuario(event) {
     }
     
     const cadastroUsuario = {
+        nomeUsuario: capturaForm.nomeUsuario.value,
         emailUsuario: capturaForm.emailUsuario.value,
-        senhaUsuario: capturaForm.senhaUsuario.value
+        senhaUsuario: capturaForm.senhaUsuario.value,
+        recados: []
     }
 
     usuarios.push(cadastroUsuario)

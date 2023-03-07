@@ -40,45 +40,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #00B1AA;
     height: 7vh;
     width: 100vw;
-}
-
-.header button{
-    position: absolute;
-    right: 0;
-    height: inherit;
-    width: 20vw;
 }
 
 /* =--------= MAIN =--------= */
 
 .main{
     display: flex;
-    background-color: #A4F200;
+    flex-direction: column;
+    
     height: 90vh;
 }
 
 #recados{
-    background-color: blueviolet;
-    width: 80vw;
-    height: 100%;   
+    width: 99vw;
+    margin: auto;
+    margin-bottom: 10px;
+    height: 100%;
 }
 
 #addRecado{
-    background-color: antiquewhite;
-    width: 20vw;
-    height: 100%;
-    display: flex;
-    align-items: center;
     
-    flex-direction: column;
+    margin-bottom: 10px;
 }
 
 form{
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -88,19 +76,40 @@ form{
 table{
     border: 1px solid black;
     border-collapse: collapse;    
-    width: 100%;    
+    width: 100%;
+    background-color: white;    
 }
 
 thead{
     border-bottom: 1px solid black;
-    background-color: white;
     font-weight: bold;
+    font-size: 1.2em;    
+}
+
+tbody td{
+    padding: 5px;
+}
+
+.botoes{
+    width: 10%;
+}
+
+.botoes button{
+    width: 45%;
+}
+
+.numeracao{
+    width: 5%;
+}
+
+.titulo{
+    width: 30%;
 }
 
 /* =--------= FOOTER =--------= */
 
 .footer{
-    display: flex;
-    background-color: #FD0006;
-    height: 3vh;
+    
+    
+    height: 3vh;    
 }

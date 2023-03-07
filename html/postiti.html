@@ -11,29 +11,26 @@
     <div class="body-container">
         <header>
             <div class="header">
-                <h2>Postiti</h2>
-                <button>Sair</button>
+                <h2>Postiti | Olá <span id="usuarioSessao"></span> !</h2>
+                <button id="botaoSair">Sair</button>
             </div>
         </header>
         <main>
             <div class="main">
                 <div id="addRecado">
-                    <div class="div-cabecalho">
-                        <h3>Olá Fulano!</h3>
-                    </div>
                     <div class="div-form">
                         <form id="addPostiti" action="">
                             <div>
-                                <label for="tituloRecado">Descrição: </label><br>                        
+                                <label for="tituloRecado">Descrição: </label>                        
                                 <input type="text" name="tituloRecado" id="tituloRecado">
                             </div>                        
                             
                             <div>
                                 <label for="novoRecado">Escreva seu recado: </label>
-                                <textarea name="novoRecado" id="novoRecado" cols="30" rows="10"></textarea>
+                                <input type= "text" name="novoRecado" id="novoRecado"></input>
                             </div>
                             
-                            <button type="submit">+</button>
+                            <button type="submit">Adicionar</button>
                         </form>
                     </div>                    
                 </div>
@@ -42,18 +39,18 @@
                     <table>
                         <thead>
                             <tr>
-                                <td>iD</td>
-                                <td>Descrição</td>
+                                <td class="numeracao">iD</td>
+                                <td class="titulo">Descrição</td>
                                 <td>Recado</td>
-                                <td>Ações</td>
+                                <td class="botoes">Ações</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>01</td>
-                                <td>Saudação</td>
-                                <td>olá mundo!</td>
-                                <td>
+                                <td class="numeracao">01</td>
+                                <td class="titulo">Saudação</td>
+                                <td >olá mundo!</td>
+                                <td class="botoes">
                                     <button>Editar</button>
                                     <button>Excluir</button>
                                 </td>
