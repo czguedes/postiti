@@ -1,6 +1,11 @@
 const recebeUsuario = JSON.parse(localStorage.getItem('usuariosCadastrados')).find((e) => {   //carrega APENAS os dados do usuário logado
-    return JSON.parse(localStorage.getItem('usuarioSessão')) === e.emailUsuario
+    return JSON.parse(localStorage.getItem('usuarioSessão')) === e.emailUsuario 
 })
+
+if(!recebeUsuario){
+    alert('You shall not pass!')
+    location.href = 'index.html'
+}
 
 console.log(recebeUsuario);
 
