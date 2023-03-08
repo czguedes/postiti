@@ -7,22 +7,16 @@ if(!recebeUsuario){
     location.href = 'index.html'
 }
 
-console.log(recebeUsuario);
+console.log(recebeUsuario); //retorna um objeto com os dados do usuário logado
 
 const recebeForm = document.querySelector('form') //captura formulário
+
+const arrayRecados = recebeUsuario.recados
 
 document.addEventListener('DOMContentLoaded', (e) => { //ações a serem feitas depois de carregar todo o DOM
     e.preventDefault()   
 
     document.getElementById('usuarioSessao').innerText = recebeUsuario.nomeUsuario
-
-
-
-
-
-
-
-
 })
 
 
@@ -34,6 +28,19 @@ document.getElementById('botaoSair').addEventListener('click', (e) => { //botão
     }
 }) 
 
+recebeForm.submeterRecado.addEventListener('click', (e) => {
+    e.preventDefault()
 
-// recebeForm.addEventListener('submit')
+    const tituloRecado = recebeForm.tituloRecado.value
+    const msgRecado = recebeForm.novoRecado.value
+
+    // addMsg(tituloRecado,msgRecado)
+
+    const novoRecado = {
+        tituloRecado: tituloRecado,
+        novoRecado: msgRecado
+    }
+
+    arrayRecados.push(novoRecado)
+})
 
