@@ -1,4 +1,7 @@
-const recebeUsuario = JSON.parse(localStorage.getItem('usuariosCadastrados')).find((e) => {   //carrega APENAS os dados do usuário logado
+let nomeUsuario
+
+const recebeUsuario = JSON.parse(localStorage.getItem('usuariosCadastrados')).find((e) => {
+    nomeUsuario = e.emailUsuario
     return JSON.parse(localStorage.getItem('usuarioSessão')) === e.emailUsuario 
 })
 
@@ -75,9 +78,24 @@ function postaMsg(novaMsg){ //adiciona msgs na página e no array recados
     }
 
     arrayRecados.push(recadosUsuario)
+
+    atualizaUsuario()
 }
 
-localStorage.getItem
+function atualizaUsuario(){ //atualiza o usuario com novas mensagens
+    const procuraUsuario = JSON.parse(localStorage.getItem('usuariosCadastrados'))
+
+    const indexUsuario = procuraUsuario.findIndex((e) => {
+        return e.emailUsuario === nomeUsuario    
+    })
+
+    procuraUsuario.splice(indexUsuario,1,recebeUsuario)
+
+    console.log(procuraUsuario);
+}
+
+
+
 
 
 
