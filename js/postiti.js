@@ -11,7 +11,9 @@ console.log(recebeUsuario); //retorna um objeto com os dados do usuário logado
 
 const recebeForm = document.querySelector('form') //captura formulário
 
-const arrayRecados = recebeUsuario.recados
+const arrayRecados = recebeUsuario.recados //acessa o array de recados dentro do objeto usuario
+
+const tbody = document.querySelector('#tbody') //captura o tbody
 
 document.addEventListener('DOMContentLoaded', (e) => { //ações a serem feitas depois de carregar todo o DOM
     e.preventDefault()   
@@ -28,19 +30,54 @@ document.getElementById('botaoSair').addEventListener('click', (e) => { //botão
     }
 }) 
 
-recebeForm.submeterRecado.addEventListener('click', (e) => {
-    e.preventDefault()
+function postaMsg(novaMsg){ //adiciona msgs na página e no array recados
 
-    const tituloRecado = recebeForm.tituloRecado.value
-    const msgRecado = recebeForm.novoRecado.value
+    novaMsg.preventDefault();
 
-    // addMsg(tituloRecado,msgRecado)
+    const tituloRecado = document.getElementById('tituloRecado').value
+    const novoRecado = document.getElementById('novoRecado').value
 
-    const novoRecado = {
-        tituloRecado: tituloRecado,
-        novoRecado: msgRecado
+    const tr = document.createElement('tr')
+
+    function numMsg(){
+        let numMsg = Number(arrayRecados.length) ?? '1'
+        return ++numMsg
+    }
+    
+    let tdId = document.createElement('td')
+    tdId.innerText = numMsg()
+    tr.appendChild(tdId)
+
+    const tdTitulo = document.createElement('td')
+    tdTitulo.innerText = tituloRecado
+    tr.appendChild(tdTitulo)
+
+    const tdMsg = document.createElement('td')
+    tdMsg.innerText = novoRecado
+    tr.appendChild(tdMsg)
+
+    const tdBtn = document.createElement('td')
+    tr.appendChild(tdBtn)
+
+    const btnEditar = document.createElement('button')
+    btnEditar.innerText = 'Editar'
+    tdBtn.appendChild(btnEditar)
+
+    const btnExcluir = document.createElement('button')
+    btnExcluir.innerText = 'Excluir'
+    tdBtn.appendChild(btnExcluir)
+
+    tbody.appendChild(tr)
+
+    const recadosUsuario = {
+        titulo: tituloRecado,
+        recado: novoRecado
     }
 
-    arrayRecados.push(novoRecado)
-})
+    arrayRecados.push(recadosUsuario)
+}
+
+localStorage.getItem
+
+
 

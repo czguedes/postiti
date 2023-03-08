@@ -19,18 +19,16 @@
             <div class="main">
                 <div id="addRecado">
                     <div class="div-form">
-                        <form id="addPostiti">
-                            <div>
-                                <label for="tituloRecado">Descrição: </label>                        
-                                <input type="text" name="tituloRecado" id="tituloRecado">
-                            </div>                        
+                        <form id="addPostiti" onsubmit="postaMsg(event)">
                             
-                            <div>
-                                <label for="novoRecado">Escreva seu recado: </label>
-                                <input type= "text" name="novoRecado" id="novoRecado"></input>
-                            </div>
+                            <label for="tituloRecado">Descrição: </label>                        
+                            <input type="text" name="tituloRecado" id="tituloRecado">
+                            
+                            <label for="novoRecado">Escreva seu recado: </label>
+                            <input type= "text" name="novoRecado" id="novoRecado"></input>
                             
                             <button type="submit" id="submeterRecado">Adicionar</button>
+                            
                         </form>
                     </div>                    
                 </div>
@@ -39,13 +37,13 @@
                     <table>
                         <thead>
                             <tr>
-                                <td class="numeracao">iD</td>
-                                <td class="titulo">Descrição</td>
-                                <td>Recado</td>
-                                <td class="botoes">Ações</td>
+                                <th>iD</td>
+                                <th>Descrição</td>
+                                <th>Recado</td>
+                                <th>Ações</td>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="tbody">
                             
                         </tbody>
                     </table>
