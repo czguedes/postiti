@@ -22,55 +22,18 @@ document.addEventListener('DOMContentLoaded', (e) => { //ações a serem feitas 
     e.preventDefault()   
 
     document.getElementById('usuarioSessao').innerText = recebeUsuario.nomeUsuario
+
+    postaMsg()
 })
 
 
-document.getElementById('botaoSair').addEventListener('click', (e) => { //botão de sair
-    if(e){
-        alert('Adiós!')
-        localStorage.removeItem('usuarioSessão')
-        location.href = 'index.html'
-    }
-}) 
+function pushMsg(evento){ //carregar msgs no usuario
+    evento.preventDefault()
 
-function postaMsg(novaMsg){ //adiciona msgs na página e no array recados
-
-    novaMsg.preventDefault();
+    apagaTodasMsg()
 
     const tituloRecado = document.getElementById('tituloRecado').value
     const novoRecado = document.getElementById('novoRecado').value
-
-    const tr = document.createElement('tr')
-
-    function numMsg(){
-        let numMsg = Number(arrayRecados.length) ?? '1'
-        return ++numMsg
-    }
-    
-    let tdId = document.createElement('td')
-    tdId.innerText = numMsg()
-    tr.appendChild(tdId)
-
-    const tdTitulo = document.createElement('td')
-    tdTitulo.innerText = tituloRecado
-    tr.appendChild(tdTitulo)
-
-    const tdMsg = document.createElement('td')
-    tdMsg.innerText = novoRecado
-    tr.appendChild(tdMsg)
-
-    const tdBtn = document.createElement('td')
-    tr.appendChild(tdBtn)
-
-    const btnEditar = document.createElement('button')
-    btnEditar.innerText = 'Editar'
-    tdBtn.appendChild(btnEditar)
-
-    const btnExcluir = document.createElement('button')
-    btnExcluir.innerText = 'Excluir'
-    tdBtn.appendChild(btnExcluir)
-
-    tbody.appendChild(tr)
 
     const recadosUsuario = {
         titulo: tituloRecado,
@@ -80,18 +43,63 @@ function postaMsg(novaMsg){ //adiciona msgs na página e no array recados
     arrayRecados.push(recadosUsuario)
 
     atualizaUsuario()
+
+    postaMsg()
+}
+
+function apagaTodasMsg(){
+    document.querySelectorAll('.linhaRecado').forEach(element => {
+        element.remove()
+    });
+}
+
+function postaMsg(){ //adiciona msgs na página
+
+    arrayRecados.forEach((element,index) => {
+        
+        const tituloRecado = element.titulo
+        const novoRecado = element.recado
+
+        const tr = document.createElement('tr')
+        tr.className = 'linhaRecado'
+
+        let tdId = document.createElement('td')
+        tdId.innerText = index+1
+        tr.appendChild(tdId)
+
+        const tdTitulo = document.createElement('td')
+        tdTitulo.innerText = tituloRecado
+        tr.appendChild(tdTitulo)
+
+        const tdMsg = document.createElement('td')
+        tdMsg.innerText = novoRecado
+        tr.appendChild(tdMsg)
+
+        const tdBtn = document.createElement('td')
+        tr.appendChild(tdBtn)
+
+        const btnEditar = document.createElement('button')
+        btnEditar.innerText = 'Editar'
+        tdBtn.appendChild(btnEditar)
+
+        const btnExcluir = document.createElement('button')
+        btnExcluir.innerText = 'Excluir'
+        tdBtn.appendChild(btnExcluir)
+
+        tbody.appendChild(tr)
+    });
 }
 
 function atualizaUsuario(){ //atualiza o usuario com novas mensagens
-    const procuraUsuario = JSON.parse(localStorage.getItem('usuariosCadastrados'))
+    const listaArmazenada = JSON.parse(localStorage.getItem('usuariosCadastrados'))
 
-    const indexUsuario = procuraUsuario.findIndex((e) => {
+    const indexUsuario = listaArmazenada.findIndex((e) => {
         return e.emailUsuario === nomeUsuario    
     })
 
-    procuraUsuario.splice(indexUsuario,1,recebeUsuario)
+    listaArmazenada.splice(indexUsuario,1,recebeUsuario)
 
-    console.log(procuraUsuario);
+    localStorage.setItem('usuariosCadastrados',JSON.stringify(listaArmazenada))
 }
 
 
@@ -99,3 +107,10 @@ function atualizaUsuario(){ //atualiza o usuario com novas mensagens
 
 
 
+document.getElementById('botaoSair').addEventListener('click', (e) => { //botão de sair
+    if(e){
+        alert('Adiós!')
+        localStorage.removeItem('usuarioSessão')
+        location.href = 'index.html'
+    }
+}) 
