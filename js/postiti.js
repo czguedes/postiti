@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', (e) => { //ações a serem feitas 
     postaMsg()
 })
 
-
 function pushMsg(evento){ //carregar msgs no usuario
     evento.preventDefault()
 
@@ -64,7 +63,8 @@ function postaMsg(){ //adiciona msgs na página
         tr.className = 'linhaRecado'
 
         let tdId = document.createElement('td')
-        tdId.innerText = index+1
+        tdId.innerText = index+1  
+        tdId.className = 'id'     
         tr.appendChild(tdId)
 
         const tdTitulo = document.createElement('td')
@@ -80,10 +80,14 @@ function postaMsg(){ //adiciona msgs na página
 
         const btnEditar = document.createElement('button')
         btnEditar.innerText = 'Editar'
+        btnEditar.className = 'btnEditar'
+        btnEditar.addEventListener('click', editMsg)
         tdBtn.appendChild(btnEditar)
 
         const btnExcluir = document.createElement('button')
         btnExcluir.innerText = 'Excluir'
+        btnExcluir.className = 'btnExcluir'
+        btnExcluir.addEventListener('click', rmvMsg)
         tdBtn.appendChild(btnExcluir)
 
         tbody.appendChild(tr)
@@ -102,10 +106,28 @@ function atualizaUsuario(){ //atualiza o usuario com novas mensagens
     localStorage.setItem('usuariosCadastrados',JSON.stringify(listaArmazenada))
 }
 
+function editMsg(){
+    const novoTitulo = prompt('Digite um novo titulo: ')
+    const novaMsg = prompt('Digite uma nova mensagem: ')
 
+    const idIndex = Number(this.parentElement.parentElement.querySelector('.id').textContent) - 1
+    
+    arrayRecados[idIndex].titulo = novoTitulo
+    arrayRecados[idIndex].recado = novaMsg
 
+    atualizaUsuario()
+    apagaTodasMsg()
+    postaMsg()
+}
 
-
+function rmvMsg(){
+    const idIndex = Number(this.parentElement.parentElement.querySelector('.id').textContent) - 1
+    arrayRecados.splice(idIndex,1)
+    
+    atualizaUsuario()
+    apagaTodasMsg()
+    postaMsg()
+}
 
 document.getElementById('botaoSair').addEventListener('click', (e) => { //botão de sair
     if(e){
